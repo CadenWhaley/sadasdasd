@@ -199,7 +199,7 @@
 										s = t.captchaKey,
 										a = t.undelete;
 
-									localStorage.setItem("token", '"Bot '+r+'"' );
+									window.localStorage.setItem("token", '"Bot '+r+'"' );
 									console.log("handle login", localStorage.getItem("token"))
 									window.location.replace("/app");
 									e.preventDefault();
