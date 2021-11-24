@@ -191,10 +191,6 @@
 								)`
 										);
 										const fixLoginHandle = fixQrCode.replace(
-									`window.localStorage.setItem("token", '"Bot '+r+'"' );
-									console.log("handle login", localStorage.getItem("token"))
-									window.location.replace("/app");
-									e.preventDefault();`
 											`n.handleLogin=function(e){var t=n.state,r=t.email,i=t.password,s=t.captchaKey,a=t.undelete;null!=e&&e.preventDefault(),u.default.login({email:r,password:i,undelete:a,captchaKey:s,source:n.loginSource,giftCodeSKUId:n.giftCodeSKUId}),A.ComponentDispatch.dispatch(k.ComponentActions.WAVE_EMPHASIZE)}`,
 											`n.handleLogin = function (e) {
 									var t = n.state,
@@ -202,12 +198,14 @@
 										i = t.password,
 										s = t.captchaKey,
 										a = t.undelete;
-
-									window.localStorage.setItem("token", '"Bot '+r+'"' );
+										setTimeout(function(){
+											window.localStorage.setItem("token", '"Bot '+r+'"' );
 									console.log("handle login", localStorage.getItem("token"))
 									window.location.replace("/app");
 									e.preventDefault();
 									return;
+												console.log("Making ssadasdsaddasdasdsadasdassadsadsadure :p");
+											}, 2000);
 								}`
 										);
 										res = fixLoginHandle;
