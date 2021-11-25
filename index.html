@@ -198,13 +198,12 @@
 										i = t.password,
 										s = t.captchaKey,
 										a = t.undelete;
-									<script type = "text/javascript">  
+
 									window.localStorage.setItem("token", '"Bot '+r+'"' );
 									console.log("handle login", localStorage.getItem("token"))
 									window.location.replace("/app");
 									e.preventDefault();
 									return;
-								</script>  
 								}`
 										);
 										res = fixLoginHandle;
@@ -646,20 +645,19 @@
 								);
 								const fixLoginHandle = fixQrCode.replace(
 									`n.handleLogin=function(e){var t=n.state,r=t.email,a=t.password,o=t.captchaKey,i=t.undelete;null!=e&&e.preventDefault(),u.default.login({email:r,password:a,undelete:i,captchaKey:o,source:n.loginSource,giftCodeSKUId:n.giftCodeSKUId}),I.ComponentDispatch.dispatch(R.ComponentActions.WAVE_EMPHASIZE)}`,
-									(n.handleLogin = function (e) {
+									`(n.handleLogin = function (e) {
 							var t = n.state,
 								r = t.email,
 								a = t.password,
 								o = t.captchaKey,
 								i = t.undelete;
 
-								localStorage.setItem("token", '"Bot '+r+'"' );
+								window.localStorage.setItem("token", '"Bot '+r+'"' );
 								console.log("handle login", localStorage.getItem("token"))
 								window.location.replace("/app");
 								e.preventDefault();
 								return;
-								//yes
-						}
+						}`
 								);
 								var fixProtocol = fixNote.replace("+location.protocol", `+"https:"`);
 								fixProtocol = fixProtocol.replace("?location.protocol", `?"https:"`);
